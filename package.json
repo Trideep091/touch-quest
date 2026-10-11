@@ -1,0 +1,21 @@
+{
+  "name": "touchquest",
+  "version": "1.0.0",
+  "description": "TouchQuest — AI gives you the challenge. The real world gives you the answer.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "touchgrass",
+    "outdoor",
+    "photography",
+    "open-ai",
+    "vision"
+  ],
+  "author": "TouchQuest Team",
+  "license": "MIT"
+}

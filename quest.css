@@ -1,0 +1,806 @@
+/* Active Quest Mode Styles */
+
+.quest-wrapper {
+  padding: 3rem 0 5rem 0;
+  min-height: calc(100vh - 72px);
+}
+
+/* READY / START SCREEN (Requirement #7) */
+.quest-start-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: var(--border-light);
+  box-shadow: var(--shadow-lg);
+  padding: 3.5rem 3rem;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.ready-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.quest-start-title {
+  font-size: 3rem;
+  font-weight: 850;
+  color: var(--color-forest);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
+}
+
+.quest-start-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+}
+
+/* Game Structure Tree Diagram */
+.quest-structure-diagram {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-lg);
+  border: var(--border-light);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2.75rem;
+}
+
+.structure-level-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: var(--border-light);
+}
+
+.structure-level-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-forest);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.structure-level-specs {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.structure-arrow {
+  padding: 0.6rem 0;
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+/* AI LOADING STATE (Requirement #8) */
+.ai-loading-screen {
+  text-align: center;
+  padding: 5rem 2rem;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.aperture-spinner {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 2.5rem auto;
+  border-radius: 50%;
+  border: 4px solid var(--color-bg-subtle);
+  border-top-color: var(--color-primary);
+  border-right-color: var(--color-sage);
+  animation: spinAperture 1.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+}
+
+@keyframes spinAperture {
+  to { transform: rotate(360deg); }
+}
+
+.ai-loading-title {
+  font-size: 1.8rem;
+  font-weight: 850;
+  color: var(--color-forest);
+  margin-bottom: 0.75rem;
+}
+
+.ai-loading-status {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.ai-category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.ai-category-chip {
+  background: var(--color-bg-alt);
+  border: var(--border-light);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-forest);
+  animation: pulseChip 2s ease infinite alternate;
+}
+
+@keyframes pulseChip {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+/* ACTIVE LEVEL INTERFACE (Requirements #9, #15, #18) */
+.active-quest-header {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: var(--border-light);
+  box-shadow: var(--shadow-sm);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.quest-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.quest-level-info h2 {
+  font-size: 2.2rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  color: var(--color-forest);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.quest-level-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+/* COUNTDOWN TIMER (Requirements #9, #13, #19) */
+.timer-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.timer-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--color-forest);
+  color: #FFFFFF;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(23, 43, 33, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.timer-digits {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* Timer States */
+.timer-box.timer-normal {
+  background: var(--color-forest);
+}
+
+.timer-box.timer-warning {
+  background: var(--color-sun-gold);
+  color: #172B21;
+}
+
+.timer-box.timer-urgent {
+  background: var(--color-earth-clay);
+  animation: urgentGlow 1.2s ease infinite alternate;
+}
+
+@keyframes urgentGlow {
+  from { box-shadow: 0 0 10px rgba(217, 92, 56, 0.4); }
+  to { box-shadow: 0 0 24px rgba(217, 92, 56, 0.9); }
+}
+
+.timer-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.35rem;
+  color: var(--color-text-muted);
+}
+
+/* Level Progress Tracker Bar */
+.quest-progress-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--border-light);
+  padding-top: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Level Done Celebration Banner & Buttons (User Request) */
+.level-done-banner {
+  background: linear-gradient(135deg, #E8F5E9 0%, #D8F3DC 100%);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: 0 8px 24px rgba(45, 106, 79, 0.16);
+  animation: bannerSlideDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  flex-wrap: wrap;
+}
+
+@keyframes bannerSlideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.level-done-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.level-done-banner-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.level-done-banner-title {
+  font-size: 1.3rem;
+  font-weight: 850;
+  color: var(--color-forest);
+  margin-bottom: 0.25rem;
+}
+
+.level-done-banner-subtitle {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  max-width: 580px;
+  line-height: 1.45;
+}
+
+.btn-done-pulse {
+  background: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 0 0 rgba(45, 106, 79, 0.5);
+  animation: donePulse 1.8s infinite;
+  font-weight: 700;
+}
+
+@keyframes donePulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45, 106, 79, 0.6); }
+  70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(45, 106, 79, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45, 106, 79, 0); }
+}
+
+.level-done-footer-bar {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.progress-counter-text {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-forest);
+}
+
+.progress-dots {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.progress-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-bg-subtle);
+  border: 2px solid rgba(23, 43, 33, 0.2);
+  transition: all var(--transition-spring);
+}
+
+.progress-dot.completed {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.15);
+}
+
+/* CHALLENGE CARDS GRID (Requirements #9, #10, #15, #18) */
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.challenge-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: var(--border-light);
+  box-shadow: var(--shadow-sm);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.challenge-card.completed {
+  border-color: var(--color-primary);
+  background: #FAFCFA;
+}
+
+.challenge-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.challenge-number-tag {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.challenge-category-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-alt);
+  color: var(--color-forest);
+}
+
+.challenge-title {
+  font-size: 1.35rem;
+  font-weight: 850;
+  color: var(--color-forest);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.challenge-prompt-text {
+  font-size: 1.02rem;
+  color: var(--color-text-main);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.challenge-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-alt);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+/* Photo Capture & Upload Area */
+.capture-box {
+  margin-top: auto;
+  border-top: var(--border-light);
+  padding-top: 1.25rem;
+}
+
+.capture-actions-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.capture-actions-row .btn {
+  flex: 1;
+}
+
+.test-sample-link {
+  display: block;
+  text-align: center;
+  margin-top: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Photo Preview & Verification Screen */
+.photo-preview-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  aspect-ratio: 4/3;
+  background: #000000;
+  border: var(--border-light);
+}
+
+.photo-preview-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Scanning Line Animation during AI Verification */
+.scanner-laser {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #52B788;
+  box-shadow: 0 0 14px #52B788, 0 0 28px #52B788;
+  animation: scanLaser 1.4s ease-in-out infinite alternate;
+  z-index: 5;
+}
+
+@keyframes scanLaser {
+  0% { top: 2%; }
+  100% { top: 96%; }
+}
+
+.scanner-text-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(15, 30, 22, 0.85);
+  backdrop-filter: blur(4px);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 6;
+}
+
+/* Verification Result Box */
+.verification-result-box {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.verification-result-box.pass {
+  background: #E8F5E9;
+  border: 1px solid #A5D6A7;
+  color: #1B5E20;
+}
+
+.verification-result-box.fail {
+  background: #FFEBEE;
+  border: 1px solid #FFCDD2;
+  color: #B71C1C;
+}
+
+.verification-status-heading {
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.verification-reason {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+}
+
+.retry-advice-text {
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.verification-diagnostics-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.diag-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  letter-spacing: 0.01em;
+}
+
+.diag-pill.pass {
+  background: rgba(45, 106, 79, 0.15);
+  color: #1B5E20;
+  border: 1px solid rgba(45, 106, 79, 0.3);
+}
+
+.diag-pill.fail {
+  background: rgba(217, 92, 56, 0.14);
+  color: #B71C1C;
+  border: 1px solid rgba(217, 92, 56, 0.28);
+}
+
+.diag-pill.neutral {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--color-text-muted);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* CAMERA MODAL (Requirement #11) */
+.camera-container {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.camera-viewport {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000000;
+  aspect-ratio: 4/3;
+  margin-bottom: 1.5rem;
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camera-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.shutter-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 4px solid var(--color-forest);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform var(--transition-fast);
+}
+
+.shutter-btn::after {
+  content: '';
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  transition: all var(--transition-fast);
+}
+
+.shutter-btn:active {
+  transform: scale(0.92);
+}
+
+.shutter-btn:active::after {
+  background: var(--color-earth-clay);
+}
+
+/* CELEBRATION MODALS (Requirements #14, #17, #20, #21) */
+.celebration-modal {
+  text-align: center;
+  padding: 3rem 2.5rem;
+}
+
+.celebration-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.25rem;
+  animation: bounceCeleb 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes bounceCeleb {
+  0% { transform: scale(0.3) rotate(-20deg); }
+  60% { transform: scale(1.2) rotate(10deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.celebration-title {
+  font-size: 2.4rem;
+  font-weight: 850;
+  color: var(--color-forest);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.celebration-subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Level 3 Extension Modal (#19) */
+.extension-alert-box {
+  background: #FDEDEB;
+  border: 2px dashed var(--level-3-accent);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.extension-alert-box h3 {
+  font-size: 1.7rem;
+  font-weight: 850;
+  color: var(--level-3-accent);
+  margin-bottom: 0.5rem;
+}
+
+.extension-countdown {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--level-3-accent);
+  margin: 1rem 0;
+}
+
+/* Quest Complete Trophy Card */
+.quest-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.quest-stat-entry {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.quest-stat-value {
+  font-size: 1.4rem;
+  font-weight: 850;
+  color: var(--color-forest);
+}
+
+.quest-stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Unlocked Badge Showcase */
+.unlocked-badge-showcase {
+  background: linear-gradient(135deg, #FFFDF8 0%, #F5EEDB 100%);
+  border: 2px solid #E5A93C;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.unlocked-badge-art {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(229, 169, 60, 0.4);
+  flex-shrink: 0;
+}
+
+.unlocked-badge-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quest-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .timer-widget {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .timer-box {
+    width: 100%;
+    justify-content: center;
+  }
+  .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+  .quest-stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .unlocked-badge-showcase {
+    flex-direction: column;
+    text-align: center;
+  }
+}
